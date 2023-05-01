@@ -79,3 +79,6 @@ README〜ER図作成:5/5 〆切
 
 ■画面遷移図
 https://www.figma.com/file/KtRr8mhQVWcMCDgAI0lIx8/zuboramen?node-id=0%3A1&t=Clp759vheyGUBq91-1
+
+■ER図
+[![Image from Gyazo](https://i.gyazo.com/78bad1df02a1fa9e311369b715178369.png)](https://gyazo.com/78bad1df02a1fa9e311369b715178369)
