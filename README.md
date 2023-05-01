@@ -76,6 +76,3 @@ README〜ER図作成:5/5 〆切
 ■技術選定
 - Rails7
 - Bootstrap
-
-■画面遷移図
-https://www.figma.com/file/KtRr8mhQVWcMCDgAI0lIx8/zuboramen?node-id=0%3A1&t=Clp759vheyGUBq91-1
