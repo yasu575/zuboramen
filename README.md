@@ -81,4 +81,4 @@ README〜ER図作成:5/5 〆切
 https://www.figma.com/file/KtRr8mhQVWcMCDgAI0lIx8/zuboramen?node-id=0%3A1&t=Clp759vheyGUBq91-1
 
 ■ER図
-[![Image from Gyazo](https://i.gyazo.com/25b811c7fcef9144667bc4841379589e.png)](https://gyazo.com/25b811c7fcef9144667bc4841379589e)
+[![Image from Gyazo](https://i.gyazo.com/51e7c4a1ace736cbef0714f6df2198c2.png)](https://gyazo.com/51e7c4a1ace736cbef0714f6df2198c2)
