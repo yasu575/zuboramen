@@ -60,6 +60,10 @@ group :development, :test do
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
   gem "bullet"
+
+  # Debugger
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development do
