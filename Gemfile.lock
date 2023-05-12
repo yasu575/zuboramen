@@ -340,7 +340,6 @@ DEPENDENCIES
   rspec-rails
   rubocop
   rubocop-rails
-  sassc-rails
   sorcery
   sprockets-rails
   stimulus-rails
