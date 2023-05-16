@@ -30,6 +30,7 @@ ja:
     new:
       title: '投稿作成'
     index:
+      title: '投稿一覧'
       no_result: '投稿がありません'
     create:
       success: '投稿を作成しました'
