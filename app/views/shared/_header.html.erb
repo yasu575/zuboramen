@@ -15,7 +15,8 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <%= link_to (t 'defaults.logout'), logout_path, class: 'dropdown-item', method: :delete %>
+              <%= link_to t('posts.new.title'), new_post_path, class: 'nav-link' %>
+              <%= link_to t('defaults.logout'), logout_path, class: 'nav-link', method: :delete %>
               <%= link_to "プロフィール", "#", class: 'nav-link' %>
             </li>
           </ul>
