@@ -8,3 +8,9 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+      post:
+        title: '商品名'
+        topping: 'トッピング'
+        tag: 'タグ'
+        image: '写真'
+        content: '本文'
