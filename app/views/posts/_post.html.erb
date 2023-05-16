@@ -9,20 +9,15 @@
           </a>
         </h4>
         <div class='mr10 float-right'>
-          <a href="#"><%= icon 'fas', 'trash', class: 'pr-1' %></a>
-          <a href="#"><%= icon 'fa', 'pen' %></a>
         </div>
         <ul class="list-inline">
           <li class="list-inline-item">
-            <%= icon 'far', 'user' %>
-            <%= post.user_name %>
+            <%= post.title %>
           </li>
           <li class="list-inline-item">
-            <%= icon 'far', 'calender' %>
             <%= l post.created_at, format: :long %>
           </li>
         </ul>
-        <p class="card-text"><%= post.body %></p>
       </div>
     </div>
   </div>
