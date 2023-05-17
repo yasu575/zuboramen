@@ -52,9 +52,12 @@ gem "jquery-rails"
 
 # Authentication
 gem "sorcery"
-
 # translation
 gem 'rails-i18n'
+# 画像投稿
+gem 'carrierwave'
+# 画像処理
+gem 'mini_magick'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
