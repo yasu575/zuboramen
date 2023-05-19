@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: %i[edit update destroy]
+
   def index
     @posts = Post.all.includes(:user).order(created_at: :desc)
   end
@@ -21,9 +23,30 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def edit
+    @board = current_user.boards.find(params[:id])
+  end
+
+  def update
+    @post = current_user.posts.find(params[:id])
+    if @post.update(post_params)
+      redirect_to @post, success: t('defaults.message.updated')
+    else
+      flash.now['danger'] = t('defaults.message.not_updated')
+      render :edit
+    end
+  end
+
+  def destroy
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:title, :topping, :tag, :image, :image_cache, :content)
+  end
+
+  def set_post
+    @post = current_user.posts.find(params[:id])
   end
 end

@@ -7,6 +7,8 @@ ja:
     post: '投稿'
     message:
       require_login: 'ログインしてください'
+      updated: '投稿を更新しました'
+      not_updated: '投稿を更新できませんでした'
   users:
     new:
       title: 'ユーザー登録'
@@ -25,6 +27,8 @@ ja:
     destroy:
       success: 'ログアウトしました'
   posts:
+    show: 
+      title: '投稿詳細'
     new:
       title: '投稿作成'
     index:
