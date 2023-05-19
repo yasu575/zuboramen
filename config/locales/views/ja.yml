@@ -29,6 +29,8 @@ ja:
     destroy:
       success: 'ログアウトしました'
   posts:
+    edit:
+      title: '投稿編集'
     show: 
       title: '投稿詳細'
     new:
