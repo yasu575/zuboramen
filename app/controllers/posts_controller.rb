@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @board = current_user.boards.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 
   def update
