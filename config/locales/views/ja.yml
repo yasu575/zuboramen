@@ -5,6 +5,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     post: '投稿'
+    edit: '編集'
     message:
       require_login: 'ログインしてください'
       updated: '投稿を更新しました'
@@ -41,3 +42,7 @@ ja:
     create:
       success: '投稿を作成しました'
       fail: '投稿を作成できませんでした'
+  profiles:
+    show:
+      title: 'プロフィール'
+
