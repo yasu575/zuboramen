@@ -42,6 +42,10 @@ class PostsController < ApplicationController
     redirect_to posts_path, success: t('defaults.message.deleted')
   end
 
+  def likes
+    @posts = current_user.likes_posts
+  end
+
   private
 
   def post_params

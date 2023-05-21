@@ -7,7 +7,12 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create]
 
-  resources :posts
+  resources :posts do
+    resources :likes,  only: %i[create destroy]
+    collection do
+      get :likes
+    end
+  end
 
   resource :profile, only: %i[show edit update]
 end
