@@ -1,0 +1,4 @@
+<%= link_to likes_path(post_id: post.id), id: "js-like-button-for-post-#{post.id}", class:"float-right", method: :post, remote: true do %>
+  <i class="fa-regular fa-thumbs-up" style="color: black;"></i>
+  <span style="color: black;"><%= post.likes.count %></span>
+<% end %>
