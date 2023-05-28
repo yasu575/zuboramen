@@ -1,50 +1,48 @@
-<div class="container pt-3">
+<div class="container pt-4">
   <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <div class='text-center mb-3'>
-        <h1><%= t 'users.new.title' %></h1>
-        <%= form_with model: @user, local: true do |f| %>
-          <%= render 'shared/error_messages', object: f.object %>
-      </div>
-      <div class="form-group text-center mb-3">
-        <i class="fas fa-pen"></i>
-        <%= f.label :name %>
-        <span class="badge text-bg-danger">必須</span>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
-      <div class="form-group text-center mb-3">
-        <i class="fas fa-envelope"></i>
-        <%= f.label :email %>
-        <span class="badge text-bg-danger">必須</span>
-        <%= f.email_field :email, class: 'form-control' %>
-      </div>
-      <div class="form-group text-center mb-3">
-        <i class="fas fa-lock"></i>
-        <%= f.label :password %>
-        <span class="badge text-bg-danger">必須</span>
-        <%= f.password_field :password, class: 'form-control' %>
-      </div>
-      <div class="form-group text-center mb-3">
-        <i class="fas fa-key"></i>
-        <%= f.label :password_confirmation %>
-        <span class="badge text-bg-danger">必須</span>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-      </div>
-      <div class="form-group text-center mb-3">
-        <i class="fas fa-user-circle"></i>
-        <%= f.label :avatar %>
-        <span class="badge text-bg-secondary">任意</span>
-        <%= f.file_field :avatar, onchange: 'previewFileWithId(preview)', class: 'form-control mb-3', accept: 'image/*' %>
-        <%= f.hidden_field :avatar_cache %>
-      </div>
-      <div class='text-center mt-3'>
-        <%= image_tag @user.avatar.url, class: 'rounded-circle', id: 'preview', size: '100x100' %>
-      <div class="text-center mt-3 mb-3">
-        <%= f.submit (t 'defaults.register'), class: 'btn btn-warning' %>
-      </div>
-        <% end %>
-      <div class='text-center mb-3'>
-        <%= link_to (t '.to_login_page'), login_path %>
+    <div class="col-md-9 col-lg-6 mx-auto">
+      <div class="card shadow">
+        <div class="card-body p-4 p-sm-5">
+          <h1 class='text-center mb-4 mb-5 fw-light fs-2'><%= t('users.new.title') %></h1>
+          <%= form_with model: @user, local: true do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <div class="form-group text-center mb-4">
+              <%= f.label :name %>
+              <span class="badge text-bg-danger">必須</span>
+              <%= f.text_field :name, class: 'form-control', placeholder: 'ニックネームを入力してください' %>
+            </div>
+            <div class="form-group text-center mb-4">
+              <%= f.label :email %>
+              <span class="badge text-bg-danger">必須</span>
+              <%= f.email_field :email, class: 'form-control', placeholder: 'メールアドレスを入力してください' %>
+            </div>
+            <div class="form-group text-center mb-4">
+              <%= f.label :password %>
+              <span class="badge text-bg-danger">必須</span>
+              <%= f.password_field :password, class: 'form-control', placeholder: '3文字以上のパスワードを入力してください' %>
+            </div>
+            <div class="form-group text-center mb-4">
+              <%= f.label :password_confirmation %>
+              <span class="badge text-bg-danger">必須</span>
+              <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'パスワード確認' %>
+            </div>
+            <div class="form-group text-center mb-4">
+              <%= f.label :avatar %>
+              <span class="badge text-bg-secondary">任意</span>
+              <%= f.file_field :avatar, onchange: 'previewFileWithId(preview)', class: 'form-control mb-3', accept: 'image/*' %>
+              <%= f.hidden_field :avatar_cache %>
+            </div>
+            <div class='text-center mt-4'>
+              <%= image_tag @user.avatar.url, class: 'rounded-circle', id: 'preview', size: '100x100' %>
+            </div>
+            <div class="text-center mt-4 mb-4">
+              <%= f.submit t('defaults.register'), class: 'btn btn-warning' %>
+            </div>
+            <div class='text-center mb-4'>
+              <%= link_to t('.to_login_page'), login_path %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

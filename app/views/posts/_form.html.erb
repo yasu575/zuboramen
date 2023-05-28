@@ -1,24 +1,28 @@
 <%= form_with model: post, local: true do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="form-group mb-3">
+  <div class="form-group text-center mb-3">
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+    <span class="badge text-bg-danger">必須</span>
+    <%= f.text_field :title, class: 'form-control', placeholder: '商品名を検索してください' %>
   </div>
-  <div class="form-group mb-3">
+  <div class="form-group text-center mb-3">
     <%= f.label :topping %>
-    <%= f.text_field :topping, class: 'form-control' %>
+    <span class="badge text-bg-danger">必須</span>
+    <%= f.text_field :topping, class: 'form-control', placeholder: 'トッピングを検索してください' %>
   </div>
-  <div class="form-group mb-3">
+  <div class="form-group text-center mb-3">
     <%= f.label :image %>
+    <span class="badge text-bg-danger">必須</span>
     <%= f.file_field :image, class: 'form-control mb-3', accept: 'image/*' %>
     <%= f.hidden_field :image_cache %>
   </div>
-  <div class='mt-4 mb-4'>
+  <div class='text-center mt-4 mb-4'>
     <%= image_tag post.image_url, id: 'preview', size: '300x200' %>
   </div>
-  <div class="form-group mb-3">
+  <div class="form-group text-center mb-3">
     <%= f.label :content %>
-    <%= f.text_area :content, class: 'form-control', rows: 10 %>
+    <span class="badge text-bg-secondary">任意</span>
+    <%= f.text_area :content, class: 'form-control', placeholder: 'コメント、美味しいポイントなど、お好きな内容をお書きください', rows: 10 %>
   </div>
   <div class="text-center mb-3">
   <%= f.submit t('defaults.post'), class: 'btn btn-warning' %>
