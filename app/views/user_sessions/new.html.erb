@@ -1,23 +1,27 @@
-<div class="container">
+<div class="container pt-4">
   <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1><%= t 'users.new.title' %></h1>
-      <%= form_with url: login_path, local: true do |f| %>
-        <div class="form-group">
-          <%= f.label :email, User.human_attribute_name(:email) %>
-          <%= f.text_field :email, class: 'form-control' %>
+    <div class="col-md-9 col-lg-6 mx-auto">
+      <div class="card shadow">
+        <div class="card-body p-4 p-sm-5">
+          <p class='text-center mb-4 fw-light fs-2'><%= t('user_sessions.new.title') %></p>
+          <%= form_with url: login_path, local: true do |f| %>
+            <div class="form-group text-center mb-4">
+              <%= f.label :email, User.human_attribute_name(:email) %>
+              <%= f.text_field :email, class: 'form-control', placeholder: 'メールアドレスを入力してください' %>
+            </div>
+            <div class="form-group text-center mb-4">
+              <%= f.label :password, User.human_attribute_name(:password) %>
+              <%= f.password_field :password, class: 'form-control', placeholder: 'パスワードを入力してください' %>
+            </div>
+            <div class="text-center mb-4">
+              <%= f.submit t('defaults.login'), class: 'btn btn-warning' %>
+            </div>
+            <div class='text-center mb-4'>
+              <%= link_to t('.to_register_page'), new_user_path %>
+              <a href="#"><%= t('.password_forget') %></a>
+            </div>
+          <% end %>
         </div>
-        <div class="form-group">
-          <%= f.label :password, User.human_attribute_name(:password) %>
-          <%= f.password_field :password, class: 'form-control' %>
-        </div>
-        <div class="actions">
-          <%= f.submit (t 'defaults.login'), class: 'btn btn-primary' %>
-        </div>
-      <% end %>
-      <div class='text-center'>
-        <%= link_to (t '.to_register_page'), new_user_path %>
-        <a href="#"><%= t '.password_forget' %></a>
       </div>
     </div>
   </div>
