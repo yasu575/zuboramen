@@ -15,6 +15,7 @@
                 <li class="list-inline-item"><%= l @post.created_at, format: :long  %></li>
                 <li>
                 <% if current_user.own?(@post) %>
+                  <%= render 'twitter', post: @post  %>
                   <%= render 'crud_menus', post: @post %>
                 <% else %>
                   <%= render 'like_button', post: @post  %>
