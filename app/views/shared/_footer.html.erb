@@ -1,6 +1,17 @@
 <footer>
   <div class="container-fluid">
-    <div class=" bg-light">
+    <div class="bg-light">
+      <ul class="nav justify-content-center border-bottom">
+        <li class="nav-item">
+          <%= link_to "利用規約", terms_path, class: 'nav-link text-muted' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "プライバシーポリシー", privacy_path, class: 'nav-link text-muted' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "お問い合わせ", contact_path, class: 'nav-link text-muted' %>
+        </li>
+      </ul>
       <p class="text-center text-muted">Copyright © 2023. ズボラーメン</p>
     </div>
   </div>
