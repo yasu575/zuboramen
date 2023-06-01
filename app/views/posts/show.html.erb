@@ -11,8 +11,14 @@
             <div class='col-md-9'>
               <h3 class="d-inline"><%= @post.title %></h3>
               <ul class="list-inline">
-                <li class="list-inline-item">by <%= @post.user.name %></li>
-                <li class="list-inline-item"><%= l @post.created_at, format: :long  %></li>
+                <li class="card-text">
+                  <i class="fa-solid fa-user"></i>
+                  by <%= @post.user.name %>
+                </li>
+                <li class="card-text">
+                  <i class="fa-regular fa-calendar-days"></i>
+                  <%= l @post.created_at, format: :long  %>
+                </li>
                 <li>
                 <% if current_user.own?(@post) %>
                   <%= render 'twitter', post: @post  %>
