@@ -11,9 +11,9 @@ class ProfilesController < ApplicationController
       flash.now[:danger] = "ユーザーを更新できませんでした"
       render :edit
     end
+  end
 
-    def show
-    end
+  def show
   end
 
   private
@@ -22,6 +22,6 @@ class ProfilesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :avater, :avater_cache)
+    params.require(:user).permit(:name, :email, :avatar, :avatar_cache)
   end
 end
