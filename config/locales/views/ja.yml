@@ -7,12 +7,14 @@ ja:
     post: '投稿'
     edit: '編集'
     search_word: '検索ワード'
+
     message:
       require_login: 'ログインしてください'
       updated: '投稿を更新しました'
       not_updated: '投稿を更新できませんでした'
       deleted: '投稿を削除しました'
       delete_confirm: '削除しますか？'
+
   users:
     new:
       title: 'ユーザー登録'
