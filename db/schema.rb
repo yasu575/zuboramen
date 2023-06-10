@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_10_121127) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_10_122317) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,6 +39,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_121127) do
     t.index ["post_id"], name: "index_post_noodles_on_post_id"
   end
 
+  create_table "post_toppings", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "topping_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id", "topping_id"], name: "index_post_toppings_on_post_id_and_topping_id", unique: true
+    t.index ["post_id"], name: "index_post_toppings_on_post_id"
+    t.index ["topping_id"], name: "index_post_toppings_on_topping_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title", null: false
     t.string "image", null: false
@@ -47,6 +57,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_121127) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "toppings", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,5 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_121127) do
   add_foreign_key "likes", "users"
   add_foreign_key "post_noodles", "noodles"
   add_foreign_key "post_noodles", "posts"
+  add_foreign_key "post_toppings", "posts"
+  add_foreign_key "post_toppings", "toppings"
   add_foreign_key "posts", "users"
 end
