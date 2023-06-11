@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
 
   def index
+    @topping_list = Topping.all
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
@@ -12,7 +13,9 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    topping_list = params[:post][:topping].split(',')
     if @post.save
+      @post.save_topping(topping_list)
       redirect_to posts_path, success: t('posts.create.success')
     else
       flash.now[:'danger'] = t('posts.create.fail')
@@ -22,15 +25,19 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post.toppings = @post.toppings
   end
 
   def edit
     @post = current_user.posts.find(params[:id])
+    @topping_list = @post.toppings.pluck(:name).join(',')
   end
 
   def update
     @post = current_user.posts.find(params[:id])
+    topping_list = params[:post][:name].split(',')
     if @post.update(post_params)
+      @post.save_topping(topping_list)
       redirect_to @post, success: t('defaults.message.updated')
     else
       flash.now['danger'] = t('defaults.message.not_updated')
@@ -50,7 +57,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :topping, :tag, :image, :image_cache, :content)
+    params.require(:post).permit(:title, :topping, :image, :image_cache, :content)
   end
 
   def set_post
