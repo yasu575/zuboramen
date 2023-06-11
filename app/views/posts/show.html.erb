@@ -11,6 +11,11 @@
             <div class='col-md-9'>
               <h3 class="d-inline"><%= @post.title %></h3>
               <ul class="list-inline">
+                <li>
+                  <% @post.toppings.each do |topping| %>
+                    <%= link_to topping.name, topping_posts_path(topping_id: topping.id), class: "badge rounded-pill bg-warning text-dark" %>
+                  <% end %>
+                </li>
                 <li class="card-text">
                   <i class="fa-solid fa-user"></i>
                   by <%= @post.user.name %>

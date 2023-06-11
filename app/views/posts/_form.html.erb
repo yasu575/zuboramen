@@ -8,7 +8,7 @@
   <div class="form-group text-center mb-3">
     <%= f.label :topping %>
     <span class="badge text-bg-danger">必須</span>
-    <%= f.text_field :topping, class: 'form-control', placeholder: 'トッピングを検索してください' %>
+    <%= f.text_field :topping, value: @tag_list, class: 'form-control', placeholder: ',で区切って入力してください' %>
   </div>
   <div class="form-group text-center mb-3">
     <%= f.label :image %>
