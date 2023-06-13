@@ -1,42 +1,42 @@
 <div class="container pt-5">
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
-      <p class='text-center mb-4 fw-light fs-2'><%= t('.title') %></p>
-      <article class="card">
+    <p class='text-center mb-4 fw-light fs-2'><%= t('.title') %></p>
+      <div class="row justify-content-center">
+        <%= image_tag @post.image.url, class: 'card-img-top img-fluid', size: '300x200' %>
+      </div>
+      
+      <div class="card mb-3 mb-lg-0">
         <div class="card-body">
-          <div class='row'>
-            <div class='col-md-3'>
-              <%= image_tag @post.image.url, class: 'card-img-top img-fluid', size: '300x200' %>
-            </div>
-            <div class='col-md-9'>
-              <h3 class="d-inline"><%= @post.title %></h3>
-              <ul class="list-inline">
-                <li>
-                  <% @post.toppings.each do |topping| %>
-                    <%= link_to topping.name, topping_posts_path(topping_id: topping.id), class: "badge rounded-pill bg-warning text-dark" %>
-                  <% end %>
-                </li>
-                <li class="card-text">
-                  <i class="fa-solid fa-user"></i>
-                  by <%= @post.user.name %>
-                </li>
-                <li class="card-text">
-                  <i class="fa-regular fa-calendar-days"></i>
-                  <%= l @post.created_at, format: :long  %>
-                </li>
-                <li>
-                <% if current_user.own?(@post) %>
-                  <%= render 'twitter', post: @post  %>
-                  <%= render 'crud_menus', post: @post %>
-                <% else %>
-                  <%= render 'like_button', post: @post  %>
-                <% end %>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <h5 class="fa-solid fa-pen"> 商品名</h5>
+          <div><%= @post.title %></div>
+          <hr>
+
+          <h5 class="fa-solid fa-tags"> トッピング</h5>
+          <br>
+          <% @post.toppings.each do |topping| %>
+            <%= link_to topping.name, topping_posts_path(topping_id: topping.id), class: "badge rounded-pill bg-warning text-dark" %>
+          <% end %>
+          <hr>
+            
+          <h5 class="fa-solid fa-comments"> 本文</h5>
+          <div><%= @post.content %></div>
+          <hr>
+            
+          <p class="fa-solid fa-user"> by <%= @post.user.name %></p>
+          <br>
+
+          <p class="fa-regular fa-calendar-days"> <%= l @post.created_at, format: :long %></p>
+          <br>
+
+          <% if current_user.own?(@post) %>
+            <%= render 'twitter', post: @post  %>
+            <%= render 'crud_menus', post: @post %>
+          <% else %>
+            <%= render 'like_button', post: @post  %>
+          <% end %>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </div>

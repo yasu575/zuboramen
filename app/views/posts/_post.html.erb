@@ -20,7 +20,9 @@
             <i class="fa-regular fa-calendar-days"></i>
             <%= l post.created_at, format: :long %>
           </li>
-          <%= render 'crud_menus', post: post if current_user.own?(post) %>
+          <p class="card-text">
+            <%= post.content %>
+          </p>
         </ul>
       </div>
     </div>
