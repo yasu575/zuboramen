@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :toppings do
-    get 'posts'
+    get 'posts', to: 'posts#search'
   end
 
   resources :likes, only: %i[create destroy]

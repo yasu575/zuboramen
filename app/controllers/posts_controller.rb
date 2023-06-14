@@ -35,10 +35,10 @@ class PostsController < ApplicationController
 
   def update
     @post = current_user.posts.find(params[:id])
-    topping_list = params[:post][:name].split(',')
+    topping_list = params[:post][:topping].split(',')
     if @post.update(post_params)
       @post.save_topping(topping_list)
-      redirect_to @post, success: t('defaults.message.updated')
+      redirect_to post_path(@post), success: t('defaults.message.updated')
     else
       flash.now['danger'] = t('defaults.message.not_updated')
       render :edit
