@@ -1,4 +1,8 @@
-<%= link_to "https://twitter.com/share?url=#{ request.url }&text=【おすすめのトッピング】%0a%0a#{ post.content }カップラーメン好きと繋がりたい", target: '_blank' do %>
-  <i class="fab fa-twitter" style='color: #3399FF;'></i>
-  <span>この投稿をTwitterでシェア</span>
-<% end %>
+<div class="list-inline-item"> 
+  <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【おすすめのトッピング】%0a#{ post.title }に合うトッピングを共有します！%0a「#{ post.topping }」
+  %0a%0a&hashtags=カップラーメン,カップ麺,トッピング,ズボラ,超簡単,アレンジ,カップラーメン好きと繋がりたい", 
+  target: '_blank' do %>
+    <i class="fab fa-twitter" style='color: #3399FF;'></i>
+    <span>この投稿をTwitterでシェア</span>
+  <% end %>
+</div>
