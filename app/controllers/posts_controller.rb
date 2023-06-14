@@ -54,6 +54,12 @@ class PostsController < ApplicationController
     @posts = current_user.likes_posts
   end
 
+  def search
+    @topping_list = Topping.all
+    @topping = Topping.find(params[:topping_id])
+    @posts = @topping.posts.all
+  end
+
   private
 
   def post_params
