@@ -8,19 +8,23 @@
         </h4>
         <ul class="list-inline">
           <li class="card-text">
-            <i class="fa-solid fa-user"></i>
-            <%= post.user.name %>
-          </li>
-          <li>
+            <i class="fa-solid fa-tags"></i>
             <% post.toppings.each do |topping| %>
               <%= link_to topping.name, topping_posts_path(topping_id: topping.id), class: "badge rounded-pill bg-warning text-dark" %>
             <% end %>
           </li>
           <li class="card-text">
+            <i class="fa-solid fa-comments"></i>
+            <%= post.content %>
+          </li>
+          <li class="card-text">
+            <i class="fa-solid fa-user"></i>
+            <%= post.user.name %>
+          </li>
+          <li class="card-text">
             <i class="fa-regular fa-calendar-days"></i>
             <%= l post.created_at, format: :long %>
           </li>
-          <%= render 'crud_menus', post: post if current_user.own?(post) %>
         </ul>
       </div>
     </div>

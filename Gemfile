@@ -53,6 +53,7 @@ gem "jquery-rails"
 gem "sorcery"
 gem 'rails-i18n'
 gem 'carrierwave'
+gem 'mini_magick'
 gem 'kaminari'
 gem 'ransack', "~> 3.2.1"
 gem 'meta-tags'
