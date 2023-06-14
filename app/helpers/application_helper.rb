@@ -10,10 +10,7 @@ module ApplicationHelper
       keywords: 'カップラーメン,カップ麺,トッピング,ズボラ,超簡単,アレンジ',
       canonical: request.original_url,
       separator: '|',
-      icon: [
-        { href: image_url('favicon.png') },
-        { href: image_url('favicon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
-      ],
+      
       og: {
         site_name: 'ズボラーメン',
         title: 'ズボラなあなたへの超簡単カップラーメントッピング共有サービス',
@@ -24,7 +21,7 @@ module ApplicationHelper
         local: 'ja-JP',
       },
       twitter: {
-        card: 'summary_lerge_image',
+        card: 'summary_large_image',
         site: '@9110_yasu',
         image: image_url('ogp.jpg'),
       }
