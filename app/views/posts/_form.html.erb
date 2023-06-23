@@ -3,7 +3,7 @@
   <div class="form-group text-center mb-3">
     <%= f.label :title %>
     <span class="badge text-bg-danger">必須</span>
-    <%= f.text_field :title, class: 'form-control', placeholder: '商品名を検索してください' %>
+    <%= f.collection_select :title, Noodle.all, :name, :name, { include_blank: '商品名を検索してください' },  class: 'form-control' %> 
   </div>
   <div class="form-group text-center mb-3">
     <%= f.label :topping %>
