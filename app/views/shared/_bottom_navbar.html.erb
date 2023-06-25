@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row bg-light">
+    <nav class="nav justify-content-center fixed-bottom bg-light copyright">
+      <%= link_to root_path, class: 'nav-link text-dark' do %>
+        <div class="text-center m-3">
+          <i class="fa-solid fa-house"></i>
+          <p>ホーム</p>
+        </div>
+      <% end %>
+      <%= link_to posts_path, class: 'nav-link text-dark' do %>
+        <div class="text-center m-3">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <p>投稿一覧</p>
+        </div>
+      <% end %>
+      <%= link_to new_post_path, class: 'nav-link text-dark' do %>
+        <div class="text-center m-3">
+          <i class="fa-solid fa-camera-retro"></i>
+          <p>投稿作成</p>
+        </div>
+      <% end %>
+      <%= link_to profile_path, class: 'nav-link text-dark' do %>
+        <div class="text-center m-3">
+          <i class="fa-solid fa-address-card"></i>
+          <p>プロフィール</p>
+        </div>
+      <% end %>
+    </nav>
+  </div>
+</div>
+
